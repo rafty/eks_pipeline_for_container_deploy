@@ -23,7 +23,7 @@ class VpcConstructor(Construct):
                     name="Public",
                     cidr_mask=24),
                 aws_ec2.SubnetConfiguration(
-                    subnet_type=aws_ec2.SubnetType.PRIVATE_ISOLATED,
+                    subnet_type=aws_ec2.SubnetType.PRIVATE_WITH_NAT,
                     name="Private",
                     cidr_mask=24),
             ],

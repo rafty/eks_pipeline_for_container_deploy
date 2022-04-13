@@ -36,7 +36,7 @@ class EksClusterStack(Stack):
             version=aws_eks.KubernetesVersion.V1_21,
             endpoint_access=aws_eks.EndpointAccess.PUBLIC,
             vpc=_vpc.vpc,
-            vpc_subnets=_vpc.vpc.private_subnets,
+            # vpc_subnets=_vpc.vpc.private_subnets, # Default: - All public and private subnets
             masters_role=owner_role,
             default_capacity=2
         )
