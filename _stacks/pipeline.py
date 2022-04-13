@@ -44,12 +44,13 @@ class PipelineStack(Stack):
             )
         )
 
-        # ----------------------------------------
-        # Add Stage: EKS Cluster
-        # ----------------------------------------
-        eks_cluster_dev_stage = EksClusterStage(
-            scope=self,
-            construct_id='EksClusterDev',
-            env=env
-        )
-        pipeline.add_stage(eks_cluster_dev_stage)
+        # EKS クラスタはお金がかかるので一旦コメントアウト 2022.04.13
+        # # ----------------------------------------
+        # # Add Stage: EKS Cluster
+        # # ----------------------------------------
+        # eks_cluster_dev_stage = EksClusterStage(
+        #     scope=self,
+        #     construct_id='EksClusterDev',
+        #     env=env
+        # )
+        # pipeline.add_stage(eks_cluster_dev_stage)
