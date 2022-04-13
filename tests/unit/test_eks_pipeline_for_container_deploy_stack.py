@@ -1,10 +1,10 @@
 import aws_cdk as core
 import aws_cdk.assertions as assertions
 
-from eks_pipeline_for_container_deploy.eks_pipeline_for_container_deploy_stack import EksPipelineForContainerDeployStack
+from _stacks.pipeline import EksPipelineForContainerDeployStack
 
 # example tests. To run these tests, uncomment this file along with the example
-# resource in eks_pipeline_for_container_deploy/eks_pipeline_for_container_deploy_stack.py
+# resource in _stacks/pipeline.py
 def test_sqs_queue_created():
     app = core.App()
     stack = EksPipelineForContainerDeployStack(app, "eks-pipeline-for-container-deploy")

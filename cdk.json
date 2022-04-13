@@ -26,6 +26,9 @@
     "@aws-cdk/core:target-partitions": [
       "aws",
       "aws-cn"
-    ]
+    ],
+    "repository-name": "rafty/eks_pipeline_for_container_deploy",
+    "github-connection-arn": "arn:aws:codestar-connections:ap-northeast-1:338456725408:connection/ed36cdd3-6cfa-407b-b169-c9086976f1d4",
+    "pipeline-name": "EksDeployPipeline"
   }
 }
