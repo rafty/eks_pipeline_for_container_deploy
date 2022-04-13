@@ -4,6 +4,7 @@ from constructs import Construct
 from aws_cdk.pipelines import CodePipelineSource
 from aws_cdk.pipelines import CodePipeline
 from aws_cdk.pipelines import ShellStep
+from _constructs.eks_cluster_stage_construct import EksClusterStage
 
 
 class PipelineStack(Stack):
@@ -21,6 +22,7 @@ class PipelineStack(Stack):
             branch='master',
             connection_arn=github_connection_arn
         )
+
 
         # ----------------------------------------------------------
         # Pipeline: Stage: Source, Build(CDK), UpdatePipeline
@@ -41,3 +43,13 @@ class PipelineStack(Stack):
                 ]
             )
         )
+
+        # ----------------------------------------
+        # Add Stage: EKS Cluster
+        # ----------------------------------------
+        eks_cluster_dev_stage = EksClusterStage(
+            scope=self,
+            construct_id='EksClusterDev',
+            env=env
+        )
+        pipeline.add_stage(eks_cluster_dev_stage)
