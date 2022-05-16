@@ -5,6 +5,7 @@ from aws_cdk.pipelines import CodePipelineSource
 from aws_cdk.pipelines import CodePipeline
 from aws_cdk.pipelines import ShellStep
 from _constructs.eks_cluster_stage_construct import EksClusterStage
+from _constructs.eks_pod_deploy_stage_constructor import EksPodDeploymentStage
 
 
 class PipelineStack(Stack):
@@ -54,3 +55,14 @@ class PipelineStack(Stack):
         #     env=env
         # )
         # pipeline.add_stage(eks_cluster_dev_stage)
+
+        # ----------------------------------------
+        # EKS Pod Deploy
+        # ----------------------------------------
+        eks_cluster = eks_cluster_dev_stage.cluster
+        pod_deploy_stage = EksPodDeploymentStage(
+
+
+        )
+        pipeline.add_stage(pod_deploy_stage)
+
